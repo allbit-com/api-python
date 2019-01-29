@@ -21,7 +21,7 @@ transaction bundle limit : default setting 10 (depends on blockchain conditions)
 
 # API DOCS
 
-REST_API :  [rest_api.html](rest_api.html)
+REST_API :  [https://doc.allbit.com/](https://doc.allbit.com/)
 
 SOCKET_API : [SOCKET_README.md](SOCKET_README.md)
 
