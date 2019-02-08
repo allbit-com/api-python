@@ -52,11 +52,11 @@ def signMessage(wallet, apiKey, respList, pwd):
 		msg = {}
 		msg['action'] = raw['info']['action']
 		msg['actionHash'] = actionHash
-		sig = {}
-		sig['v'] = w3.toHex(signedMessage['v'])
-		sig['r'] = pedding0(w3.toHex(signedMessage['r']),32)
-		sig['s'] = pedding0(w3.toHex(signedMessage['s']),32)
-		msg['message'] = json.dumps(sig)
+		msg['message'] = {
+			'v': w3.toHex(signedMessage['v']),
+			'r': pedding0(w3.toHex(signedMessage['r']),32),
+			's': pedding0(w3.toHex(signedMessage['s']),32)
+		}
 		messages.append(msg) 
 
 	r = requests.post(BASE_URL+"/open/v2/submit-signed-message/", data={'wallet':wallet, 'apiKey':apiKey, 'messages':json.dumps(messages)})
