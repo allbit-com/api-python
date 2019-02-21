@@ -40,7 +40,7 @@ r = api.coinList()
 print(r)
 
 #get order depth
-pairId = "PAIR_ID"
+pairId = "PAIR_ID" # PAIR_ID can be derived from api.coinList() result. (key name: 'pair_id')
 r = api.orderList(pairId)
 print(r)
 
@@ -63,13 +63,16 @@ orders = [orderHash]
 r = api.orderStatus(orders)
 print(r)
 
+# TOKEN_DECIMALS can be derived from api.coinList() result. (key name: 'decimal')
+token_decimals = TOKEN_DECIMALS
+
 #make order raw hash
 orders = []
 order = {}
 order['pair'] = 1
 order['isSell'] = True
-order['amount'] = "1000000000000000000" #amount * 10 ** token_decimals
-order['price'] = "0.52000000" #Number of decimal places supported by Market (ETH,BTC : 8 decimals)
+order['amount'] = str(1 * 10 ** int(token_decimals)) #amount * 10 ** token_decimals
+order['price'] = "0.52000000" #Number of decimal places supported by Market (ETH,BTC : 8 decimals / APOT : 4 decimals)
 orders.append(order)
 r = api.generateOrder(wallet, apiKey, pwd, orders)
 print(r)
