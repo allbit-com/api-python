@@ -12,12 +12,13 @@ transaction bundle limit : default setting 10 (depends on blockchain conditions)
 
 1. install python3.6
    https://www.python.org/downloads/release/python-360/
-2. pip install virtualenv, virtualenvwrapper
-3. virtualenv -p python3.6 allbit_api
-4. . ./allbit_api/bin/activate
-5. pip install bitcoin, ethereum, web3, ...
-6. import api.py
-7. run sample.py
+2. sudo apt-get install python3.6-dev
+3. pip install virtualenv, virtualenvwrapper
+4. virtualenv -p python3.6 allbit_api
+5. . ./allbit_api/bin/activate
+6. pip install bitcoin, ethereum, web3, ...
+7. import api.py
+8. run sample.py
 
 # API DOCS
 
